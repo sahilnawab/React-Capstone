@@ -31,10 +31,11 @@ export default function Post() {
     }, [slug, navigate]);
 
     const deletePost = () => {
-        postService.deletePost(post.$id).then((status) => {
+        postService.deletepost(post.$id).then((status) => {
             if (status) {
                 fileService.deleteFile(post.featuredImage);
                 navigate("/");
+                alert("Post deleted successfully");
             }
         });
     };
